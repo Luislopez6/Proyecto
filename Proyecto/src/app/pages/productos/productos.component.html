@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+  <nav class="navbar navbar-light bg-light justify-content-between">
+    <a class="navbar-brand">Iniciodsfsdf</a>
+    
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="buscar">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="search()">Search</button>
+    
+  </nav>
+  
+  <section class="content">
+
+    <!-- Default box -->
+    <div class="card card-solid">
+      <div class="card-body pb-0">
+        <div class="row">
+
+
+
+          <div class="col-12 col-sm-6 col-md-3 d-flex align-items-stretch flex-column" *ngFor="let producto of productos">
+            <div class="card bg-light d-flex flex-fill">
+              <div class="card-header text-muted border-bottom-0">
+                Digital Strategist
+              </div>
+              <div class="card-body pt-0">
+                <div class="row">
+                  <div class="col-7">
+                    <h2 class="lead"><b>{{producto.producto}}</b></h2>
+                    <p class="text-muted text-sm"><b>Descripcion: </b> {{producto.descripcion}} </p>
+                    <ul class="ml-4 mb-0 fa-ul text-muted">
+                      <li class="small"><b>Categoria: </b> {{producto.categoria}}</li>
+                      
+                    </ul>
+                  </div>
+                  <div class="col-5 text-center">
+                    <img src="../../dist/img/user1-128x128.jpg" alt="user-avatar" class="img-circle img-fluid">
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer">
+                <div class="text-right">
+                  <a href="#" class="btn btn-sm bg-teal">
+                    <i class="fas fa-comments"></i>
+                  </a>
+                  <a href="#" class="btn btn-sm btn-primary">
+                    <i class="fas fa-user"></i> View Profile
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+      </div>
+      <!-- /.card-body -->
+      <div class="card-footer">
+        <div class="row">
+            <div class="col-md-12">
+                <app-paginator *ngIf="paginador" [paginador]="paginador"></app-paginator>
+            </div>
+        </div>
+      </div>
+      <!-- /.card-footer -->
+    </div>
+    <!-- /.card -->
+
+    
+
+  </section>
+
+</body>
+</html>
